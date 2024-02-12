@@ -1,16 +1,16 @@
 const db = require('../db')
-const Ingredient = require('../models/ingredients')
+const Ingredient = require('../models/ingredient')
 const Recipe = require('../models/recipe')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
-    const spaghettiAndMeatballs= await Recipe.find({name: 'Spaghetti and Meatballs'})
-    const margheritaPizza= await Recipe.find({name: 'Margherita Pizza'})
-    const chickenEnchiladas= await Recipe.find({name: 'Chicken Enchiladas'})
-    const chickenTamales= await Recipe.find({name: 'Chicken Tamales'})
-    const generalTsoChicken= await Recipe.find({name: "General Tso's Chicken"})
-    const beefAndBroccoli= await Recipe.find({name: 'Beef and Broccoli'})
+    const spaghettiAndMeatballs= await Recipe.find({title: 'Spaghetti and Meatballs'})
+    const margheritaPizza= await Recipe.find({title: 'Margherita Pizza'})
+    const chickenEnchiladas= await Recipe.find({title: 'Chicken Enchiladas'})
+    const chickenTamales= await Recipe.find({title: 'Chicken Tamales'})
+    const generalTsoChicken= await Recipe.find({title: "General Tso's Chicken"})
+    const beefAndBroccoli= await Recipe.find({title: 'Beef and Broccoli'})
 
     const ingredients = [
         {
@@ -19,7 +19,7 @@ const main = async () => {
               amount: 2,
               unit: "lbs"
             },
-            recipeId: spaghettiAndMeatballs._id,
+            recipeId: spaghettiAndMeatballs[0]._id,
         },
         {
             name: "Spaghetti",
@@ -27,7 +27,7 @@ const main = async () => {
               amount: 1,
               unit: "lb"
             },
-            recipeId: spaghettiAndMeatballs._id,
+            recipeId: spaghettiAndMeatballs[0]._id,
         },
         {
             name: "Pizza Dough",
@@ -35,7 +35,7 @@ const main = async () => {
               amount: 2,
               unit: "lbs"
             },
-            recipeId: margheritaPizza._id,
+            recipeId: margheritaPizza[0]._id,
         },
         {
             name: "Mozzarella",
@@ -43,7 +43,7 @@ const main = async () => {
               amount: 8,
               unit: "oz"
             },
-            recipeId: margheritaPizza._id,
+            recipeId: margheritaPizza[0]._id,
         },
         {
             name: "Chicken",
@@ -51,7 +51,7 @@ const main = async () => {
               amount: 1.5,
               unit: "lbs"
             },
-            recipeId: chickenEnchiladas._id,
+            recipeId: chickenEnchiladas[0]._id,
         },
         {
             name: "Corn Tortillas",
@@ -59,7 +59,7 @@ const main = async () => {
               amount: 8,
               unit: "tortillas"
             },
-            recipeId: chickenEnchiladas._id,
+            recipeId: chickenEnchiladas[0]._id,
         },
         {
             name: "Corn Masa",
@@ -67,7 +67,7 @@ const main = async () => {
               amount: 1,
               unit: "lbs"
             },
-            recipeId: chickenTamales._id,
+            recipeId: chickenTamales[0]._id,
         },
         {
             name: "Corn Husks",
@@ -75,7 +75,7 @@ const main = async () => {
               amount: 8,
               unit: "husks"
             },
-            recipeId: chickenTamales._id,
+            recipeId: chickenTamales[0]._id,
         },
         {
             name: "Sweet and Spicy Sauce",
@@ -83,7 +83,7 @@ const main = async () => {
               amount: 6,
               unit: "oz"
             },
-            recipeId: generalTsoChicken._id,
+            recipeId: generalTsoChicken[0]._id,
         },
         {
             name: "White Rice",
@@ -91,7 +91,7 @@ const main = async () => {
               amount: 1,
               unit: "cup"
             },
-            recipeId: generalTsoChicken._id,
+            recipeId: generalTsoChicken[0]._id,
         },
         {
             name: "Skirt Steak",
@@ -99,7 +99,7 @@ const main = async () => {
               amount: 1,
               unit: "lb"
             },
-            recipeId: beefAndBroccoli._id,
+            recipeId: beefAndBroccoli[0]._id,
         },
         {
             name: "Broccoli",
@@ -107,7 +107,7 @@ const main = async () => {
               amount: 4,
               unit: "cups"
             },
-            recipeId: beefAndBroccoli._id,
+            recipeId: beefAndBroccoli[0]._id,
         },
        
     ]
@@ -117,7 +117,7 @@ const main = async () => {
 
 const run = async () => {
     await main()
-    db.close
+    db.close()
 }
 
 run()

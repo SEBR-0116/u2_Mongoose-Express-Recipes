@@ -16,7 +16,7 @@ const main = async () => {
             vegan: false,
             kosher: false,
             gluten_free: false,
-            cuisineId: italianCuisine._id,
+            cuisineId: italianCuisine[0]._id,
         },
         {
             title: "Margherita Pizza",
@@ -24,7 +24,7 @@ const main = async () => {
             vegan: false,
             kosher: false,
             gluten_free: false,
-            cuisineId: italianCuisine._id,
+            cuisineId: italianCuisine[0]._id,
         },
         {
             title: "Chicken Enchiladas",
@@ -32,15 +32,15 @@ const main = async () => {
             vegan: false,
             kosher: false,
             gluten_free: false,
-            cuisineId: mexicanCuisine._id,
+            cuisineId: mexicanCuisine[0]._id,
         },
         {
             title: "Chicken Tamales",
             description: "Tender shredded chicken encased in corn masa dough, steamed in corn husks, creating a delicious and comforting meal.",
             vegan: false,
             kosher: false,
-            gluten_free: ture,
-            cuisineId: mexicanCuisine._id,
+            gluten_free: true,
+            cuisineId: mexicanCuisine[0]._id,
         },
         {
             title: "General Tso's Chicken",
@@ -48,7 +48,7 @@ const main = async () => {
             vegan: false,
             kosher: false,
             gluten_free: false,
-            cuisineId: chineseCuisine._id,
+            cuisineId: chineseCuisine[0]._id,
         },
         {
             title: "Beef and Broccoli",
@@ -56,7 +56,7 @@ const main = async () => {
             vegan: false,
             kosher: false,
             gluten_free: true,
-            cuisineId: chineseCuisine._id,
+            cuisineId: chineseCuisine[0]._id,
         },
 
     ]
@@ -66,7 +66,7 @@ const main = async () => {
 
 const run = async () => {
     await main()
-    db.close
+    db.close()
 }
 
 run()

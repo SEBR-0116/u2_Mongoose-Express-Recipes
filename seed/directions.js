@@ -1,15 +1,16 @@
 const db = require('../db')
 const Direction = require('../models/direction')
+const Recipe = require('../models/recipe')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
-    const spaghettiAndMeatballs= await Recipe.find({name: 'Spaghetti and Meatballs'})
-    const margheritaPizza= await Recipe.find({name: 'Margherita Pizza'})
-    const chickenEnchiladas= await Recipe.find({name: 'Chicken Enchiladas'})
-    const chickenTamales= await Recipe.find({name: 'Chicken Tamales'})
-    const generalTsoChicken= await Recipe.find({name: "General Tso's Chicken"})
-    const beefAndBroccoli= await Recipe.find({name: 'Beef and Broccoli'})
+    const spaghettiAndMeatballs= await Recipe.find({title: 'Spaghetti and Meatballs'})
+    const margheritaPizza= await Recipe.find({title: 'Margherita Pizza'})
+    const chickenEnchiladas= await Recipe.find({title: 'Chicken Enchiladas'})
+    const chickenTamales= await Recipe.find({title: 'Chicken Tamales'})
+    const generalTsoChicken= await Recipe.find({title: "General Tso's Chicken"})
+    const beefAndBroccoli= await Recipe.find({title: 'Beef and Broccoli'})
     
     const directions = [
         {
@@ -20,7 +21,7 @@ const main = async () => {
                 "Heat marinara sauce in the skillet and simmer cooked meatballs in the sauce for 5 minutes.",
                 "Serve spaghetti topped with meatballs and marinara sauce. Garnish with Parmesan cheese and parsley."
             ],
-            recipeId: spaghettiAndMeatballs._id,
+            recipeId: spaghettiAndMeatballs[0]._id,
         },
         {
             steps: [
@@ -30,7 +31,7 @@ const main = async () => {
                 "Carefully transfer the assembled pizza to the preheated pizza stone or baking sheet in the oven. Bake for 10-12 minutes, or until the crust is golden brown and the cheese is bubbly and lightly browned.",
                 "Remove the pizza from the oven and let it cool for a minute or two. Slice the pizza, garnish with additional fresh basil leaves if desired, and serve hot."
             ],
-            recipeId: margheritaPizza._id,
+            recipeId: margheritaPizza[0]._id,
         },
         {
             steps: [
@@ -40,7 +41,7 @@ const main = async () => {
                 "Pour remaining sauce over enchiladas. Sprinkle with cheese.",
                 "Bake for 20-25 minutes, until cheese is melted and bubbly. Serve garnished with cilantro."
             ],
-            recipeId: chickenEnchiladas._id,
+            recipeId: chickenEnchiladas[0]._id,
         },
         {
             steps: [
@@ -50,7 +51,7 @@ const main = async () => {
                 "Fold the sides of the corn husks over the filling, then fold up the bottom. Secure with kitchen twine if needed.",
                 "Steam tamales in a large pot for 1-1.5 hours, until masa is firm and pulls away from the husks."
             ],
-            recipeId: chickenTamales._id,
+            recipeId: chickenTamales[0]._id,
         },
         {
             steps: [
@@ -60,7 +61,7 @@ const main = async () => {
                 "Add chicken back to the skillet along with soy sauce, hoisin sauce, rice vinegar, and sugar. Cook until sauce thickens and coats the chicken.",
                 "Serve General Tso's chicken hot, garnished with sliced green onions and sesame seeds, over steamed rice."
             ],
-            recipeId: generalTsoChicken._id,
+            recipeId: generalTsoChicken[0]._id,
         },
         {
             steps: [
@@ -70,7 +71,7 @@ const main = async () => {
                 "Add marinated beef to the skillet. Stir-fry until beef is browned and cooked through.",
                 "Add blanched broccoli florets to the skillet. Stir in oyster sauce and cook until heated through. Serve hot."
             ],
-            recipeId: beefAndBroccoli._id,
+            recipeId: beefAndBroccoli[0]._id,
         },
     ]
     await Direction.insertMany(directions)
@@ -79,7 +80,7 @@ const main = async () => {
 
 const run = async () => {
     await main()
-    db.close
+    db.close()
 }
 
 run()
