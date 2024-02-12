@@ -2,7 +2,7 @@ const { CuisineType } = require('../models')
 
 const getCuisineTypes = async (req, res) => {
     try {
-        const cuisineTypes = await CuisineType.find()
+        const cuisineTypes = await CuisineType.find().populate('recipes',{name: 1})
         res.json(cuisineTypes)
     } catch (error) {
         return res.status(500).send("An error has occured")
@@ -11,7 +11,7 @@ const getCuisineTypes = async (req, res) => {
 
 const getCuisineTypeById = async (req,res) => {
     try {
-        const cuisineType = await CuisineType.findById(req.params.id)
+        const cuisineType = await CuisineType.findById(req.params.id).populate('recipes',{name: 1})
         if (cuisineType) {
             res.json(cuisineType)
         }
