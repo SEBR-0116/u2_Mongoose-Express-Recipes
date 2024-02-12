@@ -45,12 +45,6 @@ app.post("/recipes", controllers.createRecipe);
 
 app.delete("/recipes/:id", controllers.deleteRecipe);
 
-
-
-
-
-
-
 app.get("/ingredients", controllers.getAllIngredients);
 
 app.get("/ingredients/:id", controllers.getIngredient);
