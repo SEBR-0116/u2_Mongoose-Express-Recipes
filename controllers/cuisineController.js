@@ -9,6 +9,20 @@ const getAllCuisines = async (req, res) => {
     }
 }
 
+
+const createCuisine = async (req, res) => {
+    try {
+        const cuisine = await new Cuisine(req.body)
+        await cuisine.save()
+        return res.status(201).json({
+            cuisine,
+        });
+    } catch (error) {
+        return res.status(500).json({ error: error.message })
+    }
+}
+
 module.exports = {
     getAllCuisines,
+    createCuisine
 }
