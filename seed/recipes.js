@@ -37,6 +37,12 @@ const main = async () => {
             cholestrol:5,
             Carbohydrate:15
         },
+        concerns:{
+            vegan: false,
+            gluten_free: false,
+            kosher: true,
+            halal: true
+        },
         ingredients:[Ingrediants[0]._id,Ingrediants[2]._id,Ingrediants[3]._id],
         directions:[{
             instruction:"Step 1"
@@ -62,6 +68,12 @@ const main = async () => {
                 total_fat:50,
                 cholestrol:5,
                 Carbohydrate:15
+            },
+            concerns:{
+                vegan: false,
+                gluten_free: true,
+                kosher: false,
+                halal: true
             },
             ingredients:[Ingrediants[0]._id,Ingrediants[2]._id,Ingrediants[3]._id],
             directions:[{
@@ -91,6 +103,12 @@ const main = async () => {
                 cholestrol:5,
                 Carbohydrate:15
             },
+            concerns:{
+                vegan: false,
+                gluten_free: false,
+                kosher: false,
+                halal: true
+            },
             ingredients:[Ingrediants[0]._id,Ingrediants[2]._id,Ingrediants[3]._id],
             directions:[{
                 instruction:"Step 1"
@@ -118,6 +136,12 @@ const main = async () => {
                 total_fat:50,
                 cholestrol:5,
                 Carbohydrate:15
+            },
+            concerns:{
+                vegan: true,
+                gluten_free: false,
+                kosher: true,
+                halal: true
             },
             ingredients:[Ingrediants[5]._id,Ingrediants[2]._id,Ingrediants[3]._id],
             directions:[{
@@ -149,6 +173,12 @@ const main = async () => {
                 cholestrol:5,
                 Carbohydrate:15
             },
+            concerns:{
+                vegan: true,
+                gluten_free: true,
+                kosher: true,
+                halal: true
+            },
             ingredients:[Ingrediants[5]._id,Ingrediants[2]._id,Ingrediants[3]._id],
             directions:[{
                 instruction:"Step 1"
@@ -179,6 +209,12 @@ const main = async () => {
                 cholestrol:5,
                 Carbohydrate:15
             },
+            concerns:{
+                vegan: true,
+                gluten_free: false,
+                kosher: true,
+                halal: true
+            },
             ingredients:[Ingrediants[5]._id,Ingrediants[2]._id,Ingrediants[3]._id],
             directions:[{
                 instruction:"Step 1"
@@ -208,6 +244,12 @@ const main = async () => {
                 total_fat:50,
                 cholestrol:5,
                 Carbohydrate:15
+            },
+            concerns:{
+                vegan: true,
+                gluten_free: true,
+                kosher: true,
+                halal: true
             },
             ingredients:[Ingrediants[5]._id,Ingrediants[2]._id,Ingrediants[3]._id],
             directions:[{

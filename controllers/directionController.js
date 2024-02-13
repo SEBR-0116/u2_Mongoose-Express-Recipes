@@ -51,6 +51,25 @@ const get_directions_by_recipe_id = async (req,res) =>{
 }
 
 
+const get_directions_by_recipe_name = async (req,res) =>{
+    try{
+        const recipe_name = req.params.name
+        const recipe = await Recipe.findOne({name: recipe_name})
+        console.log("ttttttttt  ",recipe._id)
+        const directions_by_recipe = await Direction.find({recipe_id: recipe._id} )
+        if(directions_by_recipe)
+        {
+            return res.status(201).json(directions_by_recipe)
+            
+        }
+        throw new Error(`Directions found for ${req.params.id} this recipe`)
+
+    }catch(error){
+        return  res.status(500).send(error.message)
+    }
+}
+
+
 
 const create_direction = async (request,response) => {
     try{
@@ -101,6 +120,7 @@ module.exports = {
     get_directions_by_recipe_id,
     create_direction,
     update_direction,
-    delete_direction_id
+    delete_direction_id,
+    get_directions_by_recipe_name
 
 }
