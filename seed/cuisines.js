@@ -17,7 +17,7 @@ const main = async () => {
         }, 
         {
             type: "Blackexican Shrimp Tostadas",
-            description: "The slaw, refried black beans, and shrimp stack up on crispy tostada shells",
+            description: "Refried black beans, and shrimp stack up on crispy tostada shells",
             popular: true
         }       
     ]
