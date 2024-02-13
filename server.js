@@ -7,6 +7,7 @@ const logger = require('morgan');
 const cousintypeControler = require('./controllers/cousintypeController')
 const recipeControler = require('./controllers/recipeController')
 const ingreadienceControler = require('./controllers/ingredientController')
+const directionControler = require('./controllers/directionController')
 
 
 
@@ -69,3 +70,15 @@ app.post('/ingreadience',ingreadienceControler.create_ingredient)
 app.put('/ingreadience/:id',ingreadienceControler.update_ingreadient)
 
 app.delete('/ingreadience/:id',ingreadienceControler.delete_ingreadient)
+
+
+///Direction
+
+
+app.get('/directions',directionControler.get_all_direction)
+
+app.get('/directions/:id',directionControler.get_direction_id)
+
+app.get('/directions/recipe/:id',directionControler.get_directions_by_recipe_id)
+
+app.post('/directions',directionControler.create_direction)
