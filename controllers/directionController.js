@@ -65,33 +65,33 @@ const create_direction = async (request,response) => {
 }
 
 
-// const update_ingreadient = async (request,response) => {
-//     try{
-//         let {id} = request.params
-//         let requests = await Ingredient.findByIdAndUpdate(id, request.body,{new:true})
-//         if(requests){
-//             return response.status(200).json(requests)
-//         }
-//         throw new Error("Ingreadients not found")
-//     }catch(error){
-//         return response.status(500).send(error.message)
-//     }
-// }
+const update_direction = async (request,response) => {
+    try{
+        let {id} = request.params
+        let requests = await Direction.findByIdAndUpdate(id, request.body,{new:true})
+        if(requests){
+            return response.status(200).json(requests)
+        }
+        throw new Error("Direction not found")
+    }catch(error){
+        return response.status(500).send(error.message)
+    }
+}
 
 
-// const delete_ingreadient = async (request,response) => {
-//     try{
-//         const { id }= request.params
-//         const in_delete = await Ingredient.findByIdAndDelete(id)
-//         if(in_delete){
-//             return response.status(200).send("Increadient Deleted!")
-//         }
-//         throw new Error ("Increadient not found")
-//     }
-//     catch(error){
-//         return response.status(500).send(error.message)
-//     }
-// }
+const delete_direction_id = async (request,response) => {
+    try{
+        const { id }= request.params
+        const in_delete = await Direction.findByIdAndDelete(id)
+        if(in_delete){
+            return response.status(200).send("Direction Deleted!")
+        }
+        throw new Error ("Direction not found")
+    }
+    catch(error){
+        return response.status(500).send(error.message)
+    }
+}
 
 
 module.exports = {
@@ -99,6 +99,8 @@ module.exports = {
     get_all_direction,
     get_direction_id,
     get_directions_by_recipe_id,
-    create_direction
+    create_direction,
+    update_direction,
+    delete_direction_id
 
 }

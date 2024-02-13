@@ -82,3 +82,7 @@ app.get('/directions/:id',directionControler.get_direction_id)
 app.get('/directions/recipe/:id',directionControler.get_directions_by_recipe_id)
 
 app.post('/directions',directionControler.create_direction)
+
+app.put('/directions/:id',directionControler.update_direction)
+
+app.delete('/directions/:id',directionControler.delete_direction_id)
