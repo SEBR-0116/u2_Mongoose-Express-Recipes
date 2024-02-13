@@ -24,8 +24,48 @@ const getOneRecipe = async (req, res) => {
         return res.status(500).send(e.message)
      }
   }
+
+  const createRecipe = async (req, res) => {
+   try{
+   const recipe = await Recipe.create(req.body)
+   return res.status(201).json({
+      recipe,
+   })
+   } catch (e) {
+      return res.status(500).json({ error: e.message })
+   }
+}
+
+const updateRecipe = async (req, res) => {
+   try {
+      let id = req.params.id
+      let recipe = await Movie.findByIdAndUpdate(id, req.body, { new: true })
+      if (recipe) {
+         return res.status(200).json(movie)
+      }
+      throw new Error('Recipe not found')
+   } catch (e) {
+      return res.status(500).send(e.message)
+   }
+}
+
+const deleteRecipe = async (req, res) => {
+   try {
+      const id = req.params.id
+      let recipe = await Recipe.findByIdAndDelete(id)
+      if (recipe) {
+         return res.status(200).json(movie)
+      }
+      throw new Error('Recipe not found')
+   } catch (e) {
+      return res.status(500).send(e.message)
+   }
+}
   
   module.exports = {
    getAllRecipes,
-  getOneRecipe
+  getOneRecipe,
+  createRecipe,
+  updateRecipe,
+  deleteRecipe
   }
