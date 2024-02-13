@@ -25,3 +25,7 @@ const getOneRecipe = async (req, res) => {
      }
   }
   
+  module.exports = {
+   getAllRecipes,
+  getOneRecipe
+  }

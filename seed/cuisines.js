@@ -9,7 +9,17 @@ const main = async () => {
             type: "Blackexican Turkey Tacos",
             description: "Blaxicans is mexican and soulfood being cooked and seasoned together",
             popular: true
-        }
+        },
+        {
+            type: "Blackexican Chicken Burritos",
+            description: "Blaxicans is mexican and soulfood being cooked and seasoned together",
+            popular: true
+        }, 
+        {
+            type: "Blackexican Shrimp Tostadas",
+            description: "The slaw, refried black beans, and shrimp stack up on crispy tostada shells",
+            popular: true
+        }       
     ]
 
     await Cuisine.insertMany(cuisines)

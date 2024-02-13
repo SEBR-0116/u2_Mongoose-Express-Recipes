@@ -2,8 +2,8 @@ const {Schema} = require('mongoose')
 
 const Ingredient = new Schema(
     {
-        needed: { type: String, required: true},
-        recipeId: {type: Schema.Types.String, ref: 'Recipe'}
+        items:  {type: Array, default: []},
+        recipeId: {type: Schema.Types.ObjectId, default:null, ref: 'Recipe'}
     },
 
     { timestamps: true }

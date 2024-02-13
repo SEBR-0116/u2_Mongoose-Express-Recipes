@@ -11,8 +11,25 @@ const main = async () => {
             cookTime: 30,
             totalTime: 110,
             yield: "8 servings",
-            cuisine: '65ca7dcb3193216d25faa403'
+            cuisine: '65cac33fd5268a65a87c4deb'
+        },
+        {
+            Servings: 15,
+            prepTimeMins: 20,
+            cookTime: 100,
+            totalTime: 120,
+            yield: "15 servings",
+            cuisine: '65cac33fd5268a65a87c4dec'
+        },
+        {
+            Servings: 4,
+            prepTimeMins: 25,
+            cookTime: 5,
+            totalTime: 30,
+            yield: "4 servings",
+            cuisine: '65cac33fd5268a65a87c4ded'
         }
+
     ]
 
     await Recipe.insertMany(recipes)
