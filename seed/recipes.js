@@ -10,8 +10,10 @@ const main = async () => {
             prepTimeMins: 40,
             cookTime: 30,
             totalTime: 110,
+            directions: '65cc1311b06b5ee1753469fe',
+            ingredients:'65cc147f9df4be209b8a8582',
             yield: "8 servings",
-            cuisine: '65cac33fd5268a65a87c4deb'
+            cuisine: '65cc10c26d622a2ae47b71ea'
         },
         {
             Servings: 15,
@@ -19,7 +21,9 @@ const main = async () => {
             cookTime: 100,
             totalTime: 120,
             yield: "15 servings",
-            cuisine: '65cac33fd5268a65a87c4dec'
+            ingredients: '65cc147f9df4be209b8a8583',
+            directions:"65cc1311b06b5ee1753469ff",
+            cuisine: '65cc10c26d622a2ae47b71ea'
         },
         {
             Servings: 4,
@@ -27,7 +31,9 @@ const main = async () => {
             cookTime: 5,
             totalTime: 30,
             yield: "4 servings",
-            cuisine: '65cac33fd5268a65a87c4ded'
+            ingredients:'65cc147f9df4be209b8a8584',
+            directions:'65cc1311b06b5ee175346a00',
+            cuisine: '65cc10c26d622a2ae47b71ea'
         }
 
     ]

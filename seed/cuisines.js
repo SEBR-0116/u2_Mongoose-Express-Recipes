@@ -5,21 +5,19 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
     const cuisines = [
+       
+       {
+           type: "Blaxicans",
+           description: "Blaxicans is mexican and soulfood fusioned together to combine multiple recipes and cultures respectively."
+       },
         {
-            type: "Blackexican Turkey Tacos",
-            description: "Blaxicans is mexican and soulfood being cooked and seasoned together",
-            popular: true
+            type: "Mexican",
+            description: "Mexican cuisine is a rich and diverse culinary tradition that has evolved over thousands of years, with its earliest roots in Mesoamerican cuisine."
         },
         {
-            type: "Blackexican Chicken Burritos",
-            description: "Blaxicans is mexican and soulfood being cooked and seasoned together",
-            popular: true
-        }, 
-        {
-            type: "Blackexican Shrimp Tostadas",
-            description: "Refried black beans, and shrimp stack up on crispy tostada shells",
-            popular: true
-        }       
+            type: "Soulfood",
+            description: "Soul food is a traditional cuisine that originated in the rural South and is closely associated with African American culture.."
+        }     
     ]
 
     await Cuisine.insertMany(cuisines)

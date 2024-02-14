@@ -16,9 +16,50 @@ const getOneCuisine = async (req, res) => {
     } catch (e) {
         res.status(500).send(e.message)
     }
-}
+   }
+
+    const createCuisine = async (req, res) => {
+        try {
+        const cuisine = await Cuisine.create(req.body)
+        return res.status(201).json({
+            cuisine,
+        })
+        } catch (e) {
+           return res.status(500).json({ error: e.message })
+        }
+     }
+     
+     const updateCuisine = async (req, res) => {
+        try {
+           let id = req.params.id
+           let cuisine = await Cuisine.findByIdAndUpdate(id, req.body, { new: true })
+           if (cuisine) {
+              return res.status(200).json(movie)
+           }
+           throw new Error('Cuisine not found')
+        } catch (e) {
+           return res.status(500).send(e.message)
+        }
+     }
+     
+     const deleteCuisine = async (req, res) => {
+        try {
+           const id = req.params.id
+           let cuisine = await Cuisine.findByIdAndDelete(id)
+           if (cuisine) {
+              return res.status(200).json(movie)
+           }
+           throw new Error('Cuisine not found')
+        } catch (e) {
+           return res.status(500).send(e.message)
+        }
+     }
+
 
 module.exports = {
     getAllCuisines,
-    getOneCuisine
-}
+   getOneCuisine,
+   createCuisine,
+   updateCuisine,
+   deleteCuisine
+   }

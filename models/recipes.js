@@ -7,7 +7,9 @@ const Recipe = new Schema (
         cookTime: { type: Number, required: true},
         totalTime: { type: Number, required: true},
         yield: { type: String, required: true},
-        cuisine: {type: Schema.Types.ObjectId, ref: 'Cuisine'},
+        cuisine: {type: Schema.Types.ObjectId, ref: 'Cuisine', default: null},
+        directions: {type: Schema.Types.ObjectId, ref: 'Direction', default:null},
+        ingredients: {type: Schema.Types.ObjectId, ref: 'Ingredient', default:null},
     },
 
     { timestamps: true }
