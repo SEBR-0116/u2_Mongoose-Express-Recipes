@@ -50,6 +50,8 @@ app.get('/recipes/:id',recipeControler.get_recipe_by_id)
 
 app.get('/recipes/recipe/:name',recipeControler.get_recipe_by_name)
 
+app.get('//recipes/recipe/',)
+
 app.post('/recipes',recipeControler.create_recipe)
 
 app.put('/recipes/:id',recipeControler.update_recipe)
