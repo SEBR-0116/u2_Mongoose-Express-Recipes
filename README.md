@@ -4,32 +4,30 @@
 
 # Mongoose Express Recipes
 
-
 We know how labor intensive and draining Back End Coding can be, especially as the day goes on and our blood sugar starts to drop. Luckily, we can use our coding skills to help keep our energy up by creating a database of recipes for us to use!
 
 For this lab we are going to create a Mongoose db and Express server that has a number of models and routes for each. We'll be adding in some recipes. Don't worry about making anything too complex in this, we're more concerned with you understanding the set up of a db and server, and thinking about embedding and referencing documents than taking the time to write out something that will win you a Michelin star
 
+## Instructions
 
-## Instructions 
 - We want to see at least 4 related models, you are free to change this up and make any adjustments that you'd like
 - Cuisine type, recipes, ingredients, and directions.
 - Take your time to plan out the data and relations before you begin setting up your code. Having everything planned out before beginning will be crucial as you move into the more advanced parts of the lesson
 - We want to see you using as many data types as you can. How do we differentiate Oz vs Tsp vs Tsps vs Gms for our ingredients. How should be mark Oven temperature? How about things like Vegan, Gluten Free, Kosher, Halal... Challenge yourself to make this a strong db where you try something you have not done before
 
-  
-## Requirements 
+## Requirements
 
 - Index and Show routes for each of your models
-- Get-ing your data in a way besides your 
+- Get-ing your data in a way besides your
 - Create, Update, and Delete functionality for each as well
 - All functionality encapsulated in a Controllers folder
--  At least 1 relation between collections related to each other, with at least 1 part embedded into each other (maybe you want to relate Ingredients to Recipes, while embedding Instructions within Recipes, or maybe go the other way around)
--  Each collection should have at least 3 documents within. You can use a Seed File or your Mongo shell to populate your data
+- At least 1 relation between collections related to each other, with at least 1 part embedded into each other (maybe you want to relate Ingredients to Recipes, while embedding Instructions within Recipes, or maybe go the other way around)
+- Each collection should have at least 3 documents within. You can use a Seed File or your Mongo shell to populate your data
 
- ## Bonus
- - Make the recipes and share with your class
- - Especially if they are full of choclate and love
- - mmmmm chocolate
+## Bonus
 
-![](https://www.foodandwine.com/thmb/5unLsehhjHUTG3CU7GjOsMpmgF4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Ina-garten-new-food-network-tv-series-FT-BLOG0222-8ce1460d6041445881d5549a1d3753e1.jpg)
+- Make the recipes and share with your class
+- Especially if they are full of choclate and love
+- mmmmm chocolate
 
+![](<https://www.foodandwine.com/thmb/5unLsehhjHUTG3CU7GjOsMpmgF4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Ina-garten-new-food-network-tv-series-FT-BLOG0222-8ce1460d6041445881d5549a1d3753e1.jpg>)
